@@ -26,7 +26,7 @@ version = { workspace = true }
 [features]
 default = ["dynamic_plugin", "zenoh/default"]
 dynamic_plugin = []
-static_plugin = ['async-std']
+static_plugin = []
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -34,7 +34,6 @@ name = "zenoh_plugin_rest"
 
 [dependencies]
 anyhow = { workspace = true, features = ["default"] }
-async-std = { workspace = true, features = ["tokio1"], optional = true }
 base64 = { workspace = true }
 flume = { workspace = true }
 futures = { workspace = true }
@@ -48,9 +47,9 @@ tide = { workspace = true }
 tokio = { workspace = true }
 tracing = { workspace = true }
 zenoh = { workspace = true, default-features = false, features = [
-  "internal",
-  "plugins",
-  "unstable",
+    "internal",
+    "plugins",
+    "unstable",
 ] }
 zenoh-plugin-trait = { workspace = true }
 
@@ -75,6 +74,3 @@ license-file = ["../../LICENSE", "0"]
 maintainer = "zenoh-dev@eclipse.org"
 name = "zenoh-plugin-rest"
 section = "net"
-
-[package.metadata.cargo-machete]
-ignored = ["async-std"]
